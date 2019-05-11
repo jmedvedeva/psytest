@@ -5,6 +5,10 @@ const { remote } = require('electron')
 // current active window handler
 const currentWindow = remote.getCurrentWindow()
 
-start_testing_btn.onclick = function() { 
-    currentWindow.loadFile('src/testing_view.html')
+start_testing1_btn.onclick = function() { 
+    currentWindow.loadFile('src/testing1_view.html')
+}
+
+start_testing2_btn.onclick = function() { 
+    currentWindow.loadFile('src/testing2_view.html')
 }
