@@ -1,26 +1,25 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
-const {Database} = require('./data')
+const { app, BrowserWindow } = require('electron')
+const { Database } = require('./data')
 
-// database lives as long as out appilcation is open; it is used to read data for tests and
-// other stuff from underlying database
-let database = new Database('./data/database.sqlite')
+class GContext {
+  constructor(db) {
+    this.database = db
+    this.activeUser = undefined
+  }
+}
 
-// make database global, so each renderer can access it and get data from database
-global.database = database
-
-database.getTest('1', function(test) {
-  console.log(test)
-})
+let gctx = new GContext(new Database('./data/psytest.sqlite'))
+global.gctx = gctx
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
+    width: 900,
     height: 800,
     webPreferences: {
       nodeIntegration: true
@@ -52,7 +51,7 @@ app.on('window-all-closed', function () {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   //if (process.platform !== 'darwin')
-   app.quit()
+  app.quit()
 })
 
 app.on('activate', function () {

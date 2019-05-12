@@ -1,4 +1,4 @@
-var sqlite3 = require('sqlite3').verbose();
+var SqliteDB = require('better-sqlite3');
 
 // var db = new sqlite3.Database('data/database.sqlite');
 // db.serialize(function() {
@@ -19,34 +19,29 @@ var sqlite3 = require('sqlite3').verbose();
 
 class Database {
     constructor(filename) {
-        this.db = new sqlite3.Database(filename);
+        this.db = new SqliteDB(filename, { verbose: console.log });
     }
 
-    // reads available test IDs from database
-    getTests(callback) {
-        callback(["1", "2"])
+    findUser(email) {
+        var row = this.db.prepare('SELECT * FROM respondent WHERE email=?').get(email);
+        if (row == undefined) {
+            return undefined;
+        }
+        return {
+            name: row.name_resp,
+            surname: row.surname,
+            midlname: row.midlename,
+            sex: row.sex,
+            born: row.born,
+            email: row.email,
+            id: row.id,
+        }
     }
 
-    // reads test with given ID from database
-    getTest(id, callback) {
-        callback({
-            questions: [
-                {
-                    id: 1, 
-                    text:"Вы дурак?", 
-                    answers: [
-                        {
-                            id: 1,
-                            text: 'Да',
-                        },
-                        {
-                            id: 2,
-                            text: 'Нет',
-                        },
-                    ],
-                },
-            ],
-        })
+    createUser(user) {
+        this.db.
+            prepare('INSERT INTO respondent (surname, name_resp,midlename, sex,born,email) VALUES (?, ?, ?,?,?,?)').
+            run(user.surname, user.name, user.midlname, user.sex, user.born, user.email);
     }
 }
 

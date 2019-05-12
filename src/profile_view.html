@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Психологическое тестирование</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col1">
+                <p>email:</p>
+            </div>
+            <div class="col2">
+                <input id='emailInput' type="text" size="40">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col1">
+                <p>Имя:</p>
+            </div>
+            <div class="col2">
+                <input id='nameInput' type="text" size="40">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col1">
+                <p>Фамилия:</p>
+            </div>
+            <div class="col2">
+                <input id='surnameInput' type="text" size="40">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col1">
+                <p>Отчество:</p>
+            </div>
+            <div class="col2">
+                <input id='midlnameInput' type="text" size="40">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col1">
+                <p>Дата рождения:</p>
+            </div>
+            <div class="col2">
+                <input id='bornInput' type="date">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col1">
+                <p>Пол:</p>
+            </div>
+            <div class="col2">
+                <input type="radio" name="browser" id="femaleInput"> Женский<Br>
+                <input type="radio" name="browser" id="maleInput"> Мужской<Br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col1">
+                <a id="signin_btn">Войти</a>
+            </div>
+            <div class="col2">
+                <a id="back_btn">Назад</a>
+            </div>
+        </div>
+        <div class='row'>
+            <p id="errorText"></p>
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <p align="right" style="margin-right:2%;">Разработчик: Ю. С. Медведева</p>
+        <!-- </span> -->
+    </div>
+
+    <script>
+        require('./profile_view.js')
+    </script>
+</body>
+
+</html>

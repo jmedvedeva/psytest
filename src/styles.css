@@ -1,0 +1,88 @@
+.row:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.row {
+    display: flex;
+    /* justify-content: left;  */
+    /*    background: #545e6b;  */
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    /*  background: #fc0; */
+    /* max-width: width 1024px;  */
+    /* padding: 5% 15%; */
+}
+
+.col1 {
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+.col2 {
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    float: right;
+}
+
+.footer {
+    position: fixed;
+    /* Фиксированное положение */
+    left: 0;
+    bottom: 0;
+    /* Правый нижний угол */
+    background: #545e6b;
+    /* Цвет фона */
+    color: #fff;
+    /* Цвет текста */
+    width: 100%;
+    /* Ширина слоя */
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+a:hover {
+    /* background: rgb(44, 185, 99);
+  box-shadow: 0 15px 20px rgba(3, 109, 44, 0.4);  */
+    background: #545e6b;
+    box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
+    color: white;
+    transform: translateY(-7px);
+}
+
+.blockmain {
+    /* width: 50%; */
+    /* display: flex; */
+    /* align-items: center; */
+    text-align: center;
+    background: #fc0;
+    /* Цвет фона */
+    /* margin-left: auto;
+    margin-right: auto; */
+}
