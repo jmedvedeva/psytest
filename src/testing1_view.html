@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Поведение в конфликтных ситуациях</title>
-  </head>
-  <body>
-    <h2>№Вопроса</h2>
-    <p>
-      Ответ 1
-    </p>
-    <p>
-        Ответ 2
-      </p>
-    <p>
-      <button>Ответить</button>
-      <button id="stop_testing_btn">Закончить</button>
-    </p>
 
-    <script>
-      require('./testing1_view.js')
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Поведение в конфликтных ситуациях</title>
+</head>
+
+<body>
+  <h2 id="Qtext">№Вопроса</h2>
+  <input type="radio" name="answerN" id="answer1Input"> <label id="aswer1L"></label><Br>
+  <input type="radio" name="answerN" id="answer2Input"> <label id="aswer2L"></label><Br>
+  <p>
+    <button id='answer_btn'>Ответить</button>
+    <button id="stop_testing_btn">Закончить</button>
+  </p>
+
+  <script>
+    require('./testing1_view.js')
+  </script>
+</body>
+
 </html>
